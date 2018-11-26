@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="test@127.0.0.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="1806test"/>
+    <schema id="3" parent="1" name="1806test1"/>
+    <schema id="4" parent="1" name="book"/>
+    <schema id="5" parent="1" name="book_manage"/>
+    <schema id="6" parent="1" name="book_manageee"/>
+    <schema id="7" parent="1" name="bookes"/>
+    <schema id="8" parent="1" name="booki"/>
+    <schema id="9" parent="1" name="classll"/>
+    <schema id="10" parent="1" name="dj"/>
+    <schema id="11" parent="1" name="django_db"/>
+    <schema id="12" parent="1" name="first_program"/>
+    <schema id="13" parent="1" name="first_program1"/>
+    <schema id="14" parent="1" name="flaskday02"/>
+    <schema id="15" parent="1" name="flaskday03"/>
+    <schema id="16" parent="1" name="flaskday04"/>
+    <schema id="17" parent="1" name="flaskday04_1"/>
+    <schema id="18" parent="1" name="flaskday04_2"/>
+    <schema id="19" parent="1" name="flaskday05"/>
+    <schema id="20" parent="1" name="flaskday05_1"/>
+    <schema id="21" parent="1" name="information_schema"/>
+    <schema id="22" parent="1" name="method"/>
+    <schema id="23" parent="1" name="mysql"/>
+    <schema id="24" parent="1" name="orm_homework"/>
+    <schema id="25" parent="1" name="orm_relations"/>
+    <schema id="26" parent="1" name="pycharm"/>
+    <schema id="27" parent="1" name="rom"/>
+    <schema id="28" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="29" parent="1" name="tpp"/>
+    <schema id="30" parent="1" name="tpp01"/>
+    <schema id="31" parent="1" name="tpp02"/>
+    <schema id="32" parent="1" name="tpp_test01"/>
+    <schema id="33" parent="1" name="xfz"/>
+    <schema id="34" parent="1" name="xfzl"/>
+    <schema id="35" parent="1" name="xfzll"/>
+    <table id="36" parent="28" name="alembic_version"/>
+    <table id="37" parent="28" name="blog"/>
+    <table id="38" parent="28" name="collect"/>
+    <table id="39" parent="28" name="user"/>
+    <column id="40" parent="36" name="version_num">
+      <Position>1</Position>
+      <DataType>VARCHAR(32)|12</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="41" parent="36" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version_num</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="37" name="b_title">
+      <Position>2</Position>
+      <DataType>VARCHAR(2048)|12</DataType>
+    </column>
+    <column id="44" parent="37" name="b_content">
+      <Position>3</Position>
+      <DataType>VARCHAR(2048)|12</DataType>
+    </column>
+    <key id="45" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="38" name="u_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="48" parent="38" name="b_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="49" parent="38" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="38" name="collect_ibfk_2">
+      <ColNames>u_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="51" parent="38" name="collect_ibfk_1">
+      <ColNames>b_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>blog</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="52" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="39" name="u_mail">
+      <Position>2</Position>
+      <DataType>VARCHAR(16)|12</DataType>
+    </column>
+    <column id="54" parent="39" name="u_password">
+      <Position>3</Position>
+      <DataType>VARCHAR(128)|12</DataType>
+    </column>
+    <column id="55" parent="39" name="u_icon">
+      <Position>4</Position>
+      <DataType>VARCHAR(128)|12</DataType>
+    </column>
+    <column id="56" parent="39" name="is_delete">
+      <Position>5</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="57" parent="39" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

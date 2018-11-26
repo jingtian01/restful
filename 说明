@@ -1,0 +1,35 @@
+创建用户：127.0.0.0:5000/user/
+    post请求，用户注册的时候只需要u_mail，u_password，在提交的时候会给用户填写的email发送邮件
+
+用户登录：127.0.0.0:5000/login/
+    post请求，用户登录要验证用户的邮箱和密码是否都正确，都争取才会成功登录
+
+用户修改：127.0.0.0:5000/modify/
+    post请求，因为用户只有一个密码，所以是修改的密码，在输入的时候，有三个输入框，分别是u_mail，u_password，modify_u_password
+    在输入过后，会验证前两个邮箱和密码是否正确，如果正确，那么会认证你登陆成功，然后把您输入的modify_u_password修改成
+    您的新密码
+
+删除用户：127.0.0.0:5000/delete/
+    delete请求，要求输入u_mail和u_password，会根据您输入的用户名和密码进行验证，验证成功，才能删除
+
+博客创建：127.0.0.0:5000/blog_user/
+    post请求：博客的创建时间里在用户的登录成功的基础上，登录成功可以创建博客，有四个参数，u_mail，u_password，b_title,b_content
+    代码会在验证用户和密码正确的情况下，才可以满足创建博客的条件
+
+博客修改：127.0.0.0:5000/modify_blog/
+    post请求：想修改也得是登录状态下可以修改u_mail，u_password，b_title,b_content，modify_b_title，modify_b_content，
+    有六个参数，前两个是验证登录，第3第4个是原来博客的标题和内容，后两个是修改的标题和内容
+
+博客删除：127.0.0.0:5000/blog_delete/
+    post请求：同理，登陆后可删除，有四个参数u_mail，u_password，b_title,b_content，全部验证正确，可以删除
+
+收藏博客：127.0.0.0:5000/collection_blog/
+    post请求：同理，登陆后可修改，有三个参数u_mail，u_password，b_title，前两个验证正确，且能找到您输入的博客标题，
+    才能收藏成功
+
+
+获取某用户的所有收藏：127.0.0.0:5000/allcollection_blog/
+    post请求：有两个参数，u_mail，u_password，验证成功后，利用collect关系根据u_id找到b_id，再进一步根据b_id找到所需
+
+获取收藏某博客的所有用户：127.0.0.0:5000/allcollection_user/
+    post请求：一个参数，b_title，，根据b_title找到b_id，利用collect表根据b_id找到u_id，根据u_id找到用户的全部信息
